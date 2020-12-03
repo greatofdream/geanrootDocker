@@ -1,6 +1,16 @@
 version: '3'
 
-service:
+services:
   geanroot:
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: geanroot
-    image: debian 
+    env_file: .env
+    stdin_open: true
+    tty: true
+    ports:
+      - "127.0.0.1:${PORT}:3000"
+    volumes:
+      - "${WORKDIR}:/opt/JSAP"
+    entrypoint: ["bash"]
