@@ -13,4 +13,6 @@ services:
       - "127.0.0.1:${PORT}:3000"
     volumes:
       - "${WORKDIR}:/opt/JSAP"
+      - "/srv/greatofdream/sphereHamonic:/srv/greatofdream/sphereHarmonic"
+      - "/srv/greatofdream/software:/opt/software"
     entrypoint: ["bash"]
